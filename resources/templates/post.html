@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action = "/createPost" method = "post">
+    <input type = "text" placeholder = "Enter your post" name = "createPost"/>
+    <button type="submit">Submit New Post</button>
+</form>
+
+<br>
+
+<form action = "/editPost" method = "post">
+    <input type = "text" placeholder = "Post #" name = "num"/>
+    <input type = "text" placeholder="Edit post" name = "editPost"/>
+    <button type="submit">Edit Post</button>
+</form>
+
+<br>
+
+<form action = "/deletePost" method = "post">
+    <input type = "text" placeholder = "Which post do you want to delete?" name = "deletePost"/>
+    <button type="submit">Delete Post</button>
+</form>
+
+<br>
+<br>
+<br>
+
+{{loginName}}'s tracked Twitter posts:
+
+<ol>
+
+    {{#createPost}}
+    <li>
+        {{text}}
+    </li>
+    {{/createPost}}
+
+</ol>
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+</body>
+</html>
